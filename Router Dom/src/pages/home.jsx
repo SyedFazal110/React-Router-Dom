@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   useEffect( () => {
-    axios('https://jsonplaceholder.typicode.com/users')
+    fetch('https://jsonplaceholder.typicode.com/users')
     .then( res => res.json())
     .then( (res) => {
       console.log(res)
@@ -21,8 +21,24 @@ const Home = () => {
   } , [])
 
 
+  const singleUser = (item) =>{
+    navigate(`singlestudent/${item.id}`)
+  }
+
+
   return (
-    <div>Home</div>
+    <>
+    <h1>Hello Students</h1>
+    {
+      data ? data.map((item) => {
+        return <div key={item.id}>
+          <h3>{item.name}</h3>
+          <p>{item.username}</p>
+          <button onClick={ () => {singleUser(item)}}>Show More</button>
+        </div>
+      }) : <h1>Loading...</h1>
+    }
+    </>
   )
 }
 

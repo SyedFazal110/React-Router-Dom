@@ -7,12 +7,13 @@ import About from './pages/about.jsx'
 import Contact from './pages/contact.jsx'
 import Service from './pages/service.jsx'
 import Singlestudent from './pages/singlestudent.jsx'
+import Layout from './layout.jsx'
 
 
 const router = createBrowserRouter([
   {
     path : "/",
-    element : layout,
+    element : <Layout/>,
     children : [
       {
         path : "",
