@@ -1,13 +1,13 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import layout from './layout.jsx'
 import Home from './pages/home.jsx'
 import About from './pages/about.jsx'
 import Contact from './pages/contact.jsx'
 import Service from './pages/service.jsx'
-import Singlestudent from './pages/singlestudent.jsx'
 import Layout from './layout.jsx'
+import SingleProduct from './pages/singleproduct.jsx'
+
 
 
 const router = createBrowserRouter([
@@ -32,8 +32,8 @@ const router = createBrowserRouter([
         element : <Service/>
       },
       {
-        path : "singlestudent/:id",
-        element : <Singlestudent/>
+        path : "singleproduct/:id",
+        element : <SingleProduct/>
       },
       {
         path : "*",

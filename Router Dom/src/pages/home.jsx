@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './home.css';
+import Card from '../components/card';
 
 const Home = () => {
   const [data, setData] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(res => {
         console.log(res);
@@ -18,25 +17,25 @@ const Home = () => {
       });
   }, []);
 
-  const singleUser = (item) => {
-    navigate(`singlestudent/${item.id}`);
-  };
-
   return (
     <div className="home-container">
-      <h1>Hello Students</h1>
+       <h1>Products</h1>
       <div className="card-container">
         {data ? data.map((item) => (
-          <div className="card" key={item.id}>
-            <h3>{item.name}</h3>
-            <p>{item.username}</p>
-            <button onClick={() => singleUser(item)}>Check Details</button>
-          </div>
-        )) : <h1>Loading...</h1>}
+              <Card
+              key={item.id}
+              image={item.image}
+              title={item.title}
+              category={item.category}
+              price={item.price}
+              rate={item.rating.rate}
+              count={item.rating.count}
+            />  
+          )
+        ) : <h1 className="loading">Loading...</h1>}
       </div>
     </div>
   );
 };
 
 export default Home;
-
