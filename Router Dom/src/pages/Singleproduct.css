@@ -1,0 +1,22 @@
+.student-container {
+  background-color: #f4f4f4; 
+  color: #333; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+}
+
+.heading {
+  color: #444; 
+  margin-bottom: 20px; 
+}
+
+.loading-message {
+  font-size: 18px;
+  color: #888;
+}

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './home.css';
 import Card from '../components/card';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -19,7 +21,9 @@ const Home = () => {
 
 
   const Single = (id) => {
-    console.log("yes" , id)
+    
+    // console.log("yes" , id)
+    navigate(`/singleproduct/${id}`)
   }
 
   return (
