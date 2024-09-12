@@ -17,6 +17,11 @@ const Home = () => {
       });
   }, []);
 
+
+  const Single = (id) => {
+    console.log("yes" , id)
+  }
+
   return (
     <div className="home-container">
        <h1>Products</h1>
@@ -30,6 +35,7 @@ const Home = () => {
               price={item.price}
               rate={item.rating.rate}
               count={item.rating.count}
+              SingleProduct={() => {Single(item.id)}}
             />  
           )
         ) : <h1 className="loading">Loading...</h1>}
