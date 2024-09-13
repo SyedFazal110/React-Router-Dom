@@ -21,7 +21,6 @@ const Home = () => {
 
 
   const Single = (id) => {
-    
     // console.log("yes" , id)
     navigate(`/singleproduct/${id}`)
   }
